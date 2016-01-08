@@ -16,6 +16,8 @@
 		5A35C6E31C3FE92900B67241 /* IdentificationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C6E21C3FE92900B67241 /* IdentificationUITests.m */; };
 		5A35C6F21C3FE9EB00B67241 /* IdentificationTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C6F11C3FE9EB00B67241 /* IdentificationTabBarController.m */; };
 		5A35C6F51C3FEA0A00B67241 /* IdentificationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C6F41C3FEA0A00B67241 /* IdentificationNavigationController.m */; };
+		5A35C6FB1C3FF54B00B67241 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C6FA1C3FF54B00B67241 /* HomeRootViewController.m */; };
+		5A35C6FE1C3FF63200B67241 /* IdentificationRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C6FD1C3FF63200B67241 /* IdentificationRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		5A35C6F11C3FE9EB00B67241 /* IdentificationTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentificationTabBarController.m; sourceTree = "<group>"; };
 		5A35C6F31C3FEA0A00B67241 /* IdentificationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentificationNavigationController.h; sourceTree = "<group>"; };
 		5A35C6F41C3FEA0A00B67241 /* IdentificationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentificationNavigationController.m; sourceTree = "<group>"; };
+		5A35C6F91C3FF54B00B67241 /* HomeRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRootViewController.h; sourceTree = "<group>"; };
+		5A35C6FA1C3FF54B00B67241 /* HomeRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRootViewController.m; sourceTree = "<group>"; };
+		5A35C6FC1C3FF63200B67241 /* IdentificationRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentificationRootViewController.h; sourceTree = "<group>"; };
+		5A35C6FD1C3FF63200B67241 /* IdentificationRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentificationRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,9 @@
 				5A35C6F11C3FE9EB00B67241 /* IdentificationTabBarController.m */,
 				5A35C6F31C3FEA0A00B67241 /* IdentificationNavigationController.h */,
 				5A35C6F41C3FEA0A00B67241 /* IdentificationNavigationController.m */,
+				5A35C6F81C3FEEA300B67241 /* Identification */,
+				5A35C6F71C3FEE9400B67241 /* My */,
+				5A35C6F61C3FEE8200B67241 /* Home */,
 				5A35C6C61C3FE92900B67241 /* Main.storyboard */,
 				5A35C6C91C3FE92900B67241 /* Assets.xcassets */,
 				5A35C6CB1C3FE92900B67241 /* LaunchScreen.storyboard */,
@@ -143,6 +152,31 @@
 				5A35C6E41C3FE92900B67241 /* Info.plist */,
 			);
 			path = IdentificationUITests;
+			sourceTree = "<group>";
+		};
+		5A35C6F61C3FEE8200B67241 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5A35C6F91C3FF54B00B67241 /* HomeRootViewController.h */,
+				5A35C6FA1C3FF54B00B67241 /* HomeRootViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		5A35C6F71C3FEE9400B67241 /* My */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = My;
+			sourceTree = "<group>";
+		};
+		5A35C6F81C3FEEA300B67241 /* Identification */ = {
+			isa = PBXGroup;
+			children = (
+				5A35C6FC1C3FF63200B67241 /* IdentificationRootViewController.h */,
+				5A35C6FD1C3FF63200B67241 /* IdentificationRootViewController.m */,
+			);
+			name = Identification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +311,9 @@
 			files = (
 				5A35C6F21C3FE9EB00B67241 /* IdentificationTabBarController.m in Sources */,
 				5A35C6F51C3FEA0A00B67241 /* IdentificationNavigationController.m in Sources */,
+				5A35C6FB1C3FF54B00B67241 /* HomeRootViewController.m in Sources */,
 				5A35C6C21C3FE92900B67241 /* AppDelegate.m in Sources */,
+				5A35C6FE1C3FF63200B67241 /* IdentificationRootViewController.m in Sources */,
 				5A35C6BF1C3FE92900B67241 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +540,7 @@
 				5A35C6E91C3FE92900B67241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A35C6EA1C3FE92900B67241 /* Build configuration list for PBXNativeTarget "IdentificationTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +549,7 @@
 				5A35C6EC1C3FE92900B67241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A35C6ED1C3FE92900B67241 /* Build configuration list for PBXNativeTarget "IdentificationUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +558,7 @@
 				5A35C6EF1C3FE92900B67241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

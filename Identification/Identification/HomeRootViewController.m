@@ -1,23 +1,22 @@
 //
-//  IdentificationNavigationController.m
+//  HomeRootViewController.m
 //  Identification
 //
 //  Created by 朴文一 on 16/1/8.
 //  Copyright © 2016年 com.IdentificationofCulturalRelics. All rights reserved.
 //
 
-#import "IdentificationNavigationController.h"
+#import "HomeRootViewController.h"
 
-@interface IdentificationNavigationController ()
+@interface HomeRootViewController ()
 
 @end
 
-@implementation IdentificationNavigationController
+@implementation HomeRootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning {
