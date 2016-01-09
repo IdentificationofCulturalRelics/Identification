@@ -51,6 +51,9 @@
 		5A35C76D1C400E6D00B67241 /* HomeCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C76C1C400E6D00B67241 /* HomeCategoryModel.m */; };
 		5A35C7731C40B84900B67241 /* HomeProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C7721C40B84900B67241 /* HomeProductModel.m */; };
 		5A35C7761C40BCB000B67241 /* HomeTrainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C7751C40BCB000B67241 /* HomeTrainModel.m */; };
+		5A35C7791C40D1FB00B67241 /* DIYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C7781C40D1FB00B67241 /* DIYButton.m */; };
+		5A35C77C1C40D23700B67241 /* HomeCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77B1C40D23700B67241 /* HomeCategoryView.m */; };
+		5A35C77F1C40E9B200B67241 /* HomeTrainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +165,12 @@
 		5A35C7721C40B84900B67241 /* HomeProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductModel.m; sourceTree = "<group>"; };
 		5A35C7741C40BCB000B67241 /* HomeTrainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTrainModel.h; sourceTree = "<group>"; };
 		5A35C7751C40BCB000B67241 /* HomeTrainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTrainModel.m; sourceTree = "<group>"; };
+		5A35C7771C40D1FB00B67241 /* DIYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYButton.h; sourceTree = "<group>"; };
+		5A35C7781C40D1FB00B67241 /* DIYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYButton.m; sourceTree = "<group>"; };
+		5A35C77A1C40D23700B67241 /* HomeCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCategoryView.h; sourceTree = "<group>"; };
+		5A35C77B1C40D23700B67241 /* HomeCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCategoryView.m; sourceTree = "<group>"; };
+		5A35C77D1C40E9B200B67241 /* HomeTrainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTrainTableViewCell.h; sourceTree = "<group>"; };
+		5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTrainTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +419,12 @@
 		5A35C7701C400E9600B67241 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A35C7771C40D1FB00B67241 /* DIYButton.h */,
+				5A35C7781C40D1FB00B67241 /* DIYButton.m */,
+				5A35C77A1C40D23700B67241 /* HomeCategoryView.h */,
+				5A35C77B1C40D23700B67241 /* HomeCategoryView.m */,
+				5A35C77D1C40E9B200B67241 /* HomeTrainTableViewCell.h */,
+				5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -545,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A35C7611C4006C000B67241 /* UIView+WebCacheOperation.m in Sources */,
+				5A35C77C1C40D23700B67241 /* HomeCategoryView.m in Sources */,
 				5A35C7561C4006C000B67241 /* SDWebImageDownloader.m in Sources */,
 				5A35C74B1C4006C000B67241 /* AFURLSessionManager.m in Sources */,
 				5A35C7671C40072600B67241 /* UIView+Frame.m in Sources */,
@@ -572,10 +588,12 @@
 				5A35C6FE1C3FF63200B67241 /* IdentificationRootViewController.m in Sources */,
 				5A35C7471C4006C000B67241 /* AFNetworkReachabilityManager.m in Sources */,
 				5A35C7521C4006C000B67241 /* NSData+ImageContentType.m in Sources */,
+				5A35C77F1C40E9B200B67241 /* HomeTrainTableViewCell.m in Sources */,
 				5A35C7511C4006C000B67241 /* NSData+GIF.m in Sources */,
 				5A35C7551C4006C000B67241 /* SDWebImageDecoder.m in Sources */,
 				5A35C75D1C4006C000B67241 /* UIImage+MultiFormat.m in Sources */,
 				5A35C76D1C400E6D00B67241 /* HomeCategoryModel.m in Sources */,
+				5A35C7791C40D1FB00B67241 /* DIYButton.m in Sources */,
 				5A35C75B1C4006C000B67241 /* UIButton+WebCache.m in Sources */,
 				5A35C7571C4006C000B67241 /* SDWebImageDownloaderOperation.m in Sources */,
 				5A35C7501C4006C000B67241 /* MKAnnotationView+WebCache.m in Sources */,
