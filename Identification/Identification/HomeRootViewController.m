@@ -297,7 +297,13 @@ static int page = 0;
         cell.label.text = model.title;
 //        [cell.label sizeToFit];
         cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",model.price];
-        cell.salenumLabel.text = [NSString stringWithFormat:@"¥%.2f",model.salenum];
+        NSString *oldPrice = [NSString stringWithFormat:@"¥%.2f",model.salenum];
+        NSUInteger length = [oldPrice length];
+        
+        NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:oldPrice];
+        [attri addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlinePatternSolid | NSUnderlineStyleSingle) range:NSMakeRange(0, length)];
+        [attri addAttribute:NSStrikethroughColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, length)];
+        [cell.salenumLabel setAttributedText:attri];
         cell.hidden = NO;
         return cell;
     }
