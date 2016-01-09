@@ -9,7 +9,9 @@
 #import "IdentificationTabBarController.h"
 #import "IdentificationNavigationController.h"
 #import "HomeRootViewController.h"
+#import "TrainRootViewController.h"
 #import "IdentificationRootViewController.h"
+#import "DealRootViewController.h"
 
 @interface IdentificationTabBarController ()<UITabBarControllerDelegate>
 
@@ -20,35 +22,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    IdentificationNavigationController *home = [[IdentificationNavigationController alloc]initWithRootViewController:[[HomeRootViewController alloc]init]];
-    home.title = @"主页";
-    home.tabBarItem.image = [UIImage imageNamed:@"ic_mainpage"];
-    home.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_mainpage_c"];
+    HomeRootViewController *homeVc =[[HomeRootViewController alloc]init];
+    IdentificationNavigationController *home = [[IdentificationNavigationController alloc]initWithRootViewController:homeVc];
+    home.title = @"首页";
+    homeVc.tabBarItem.image = [UIImage imageNamed:@"ic_mainpage"];
+    homeVc.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_mainpage_c"];
     
-    IdentificationRootViewController *IdentificationVC = [[IdentificationRootViewController alloc]init];
-    IdentificationNavigationController *Identification = [[IdentificationNavigationController alloc]initWithRootViewController:IdentificationVC];
-    Identification.title = @"鉴定";
-    Identification.tabBarItem.image = [UIImage imageNamed:@"ic_new"];
-    Identification.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_new_c"];
+    IdentificationRootViewController *identificationVC = [[IdentificationRootViewController alloc]init];
+    IdentificationNavigationController *identification = [[IdentificationNavigationController alloc]initWithRootViewController:identificationVC];
+    identificationVC.title = @"鉴定";
+    identificationVC.tabBarItem.image = [UIImage imageNamed:@"ic_new"];
+    identificationVC.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_new_c"];
+
+    TrainRootViewController *trainVc = [[TrainRootViewController alloc]init];
+    IdentificationNavigationController *train = [[IdentificationNavigationController alloc]initWithRootViewController:trainVc];
+    trainVc.title = @"培训";
+    trainVc.tabBarItem.image = [UIImage imageNamed:@"ic_hot"];
+    trainVc.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_hot_c"];
+
+    DealRootViewController *dealVc = [[DealRootViewController alloc]init];
+    IdentificationNavigationController *deal = [[IdentificationNavigationController alloc]initWithRootViewController:dealVc];
+    dealVc.title = @"交易";
+    dealVc.tabBarItem.image = [UIImage imageNamed:@"ic_theme"];
+    dealVc.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_theme_c"];
 //
-//    NewRootViewController *newVC2 = [[NewRootViewController alloc]init];
-//    
-//    IdentificationNavigationController *hot = [[IdentificationNavigationController alloc]initWithRootViewController:newVC2];
-//    newVC2.title = @"最热";
-//    hot.tabBarItem.image = [UIImage imageNamed:@"ic_hot"];
-//    hot.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_hot_c"];
-//    
-//    IdentificationNavigationController *theme = [[IdentificationNavigationController alloc]initWithRootViewController:[[ThemeRootViewController alloc]init]];
-//    theme.title = @"主题";
-//    theme.tabBarItem.image = [UIImage imageNamed:@"ic_theme"];
-//    theme.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_theme_c"];
-//    
 //    IdentificationNavigationController *my = [[IdentificationNavigationController alloc]initWithRootViewController:[[MyRootViewController alloc]init]];
 //    my.title = @"我的";
 //    my.tabBarItem.image = [UIImage imageNamed:@"ic_mine"];
 //    my.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_mine_c"];
 //    
-    self.viewControllers = @[home,Identification];
+    self.viewControllers = @[home, identification, train, deal];
     
     self.delegate = self;
 

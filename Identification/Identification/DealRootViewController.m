@@ -1,24 +1,22 @@
 //
-//  IdentificationNavigationController.m
+//  DealRootViewController.m
 //  Identification
 //
 //  Created by 朴文一 on 16/1/8.
 //  Copyright © 2016年 com.IdentificationofCulturalRelics. All rights reserved.
 //
 
-#import "IdentificationNavigationController.h"
+#import "DealRootViewController.h"
 
-@interface IdentificationNavigationController ()
+@interface DealRootViewController ()
 
 @end
 
-@implementation IdentificationNavigationController
+@implementation DealRootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.navigationBar.translucent = NO;
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:103/255.0 green:144/255.0 blue:171/255.0 alpha:1]];
 }
 
 - (void)didReceiveMemoryWarning {

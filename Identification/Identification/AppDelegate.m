@@ -22,7 +22,15 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[IdentificationTabBarController alloc]init];
     [self.window makeKeyAndVisible];
-    
+    Reachability *reach = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    if (status == NotReachable) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"无法获取数据，请检查你的网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:okAction];
+        [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+        
+    }
     return YES;
 }
 
