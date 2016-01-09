@@ -54,6 +54,7 @@
 		5A35C7791C40D1FB00B67241 /* DIYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C7781C40D1FB00B67241 /* DIYButton.m */; };
 		5A35C77C1C40D23700B67241 /* HomeCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77B1C40D23700B67241 /* HomeCategoryView.m */; };
 		5A35C77F1C40E9B200B67241 /* HomeTrainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */; };
+		5A35C7821C40F1BD00B67241 /* HomeProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C7811C40F1BD00B67241 /* HomeProductCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 		5A35C77B1C40D23700B67241 /* HomeCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCategoryView.m; sourceTree = "<group>"; };
 		5A35C77D1C40E9B200B67241 /* HomeTrainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTrainTableViewCell.h; sourceTree = "<group>"; };
 		5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTrainTableViewCell.m; sourceTree = "<group>"; };
+		5A35C7801C40F1BD00B67241 /* HomeProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductCollectionViewCell.h; sourceTree = "<group>"; };
+		5A35C7811C40F1BD00B67241 /* HomeProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +428,8 @@
 				5A35C77B1C40D23700B67241 /* HomeCategoryView.m */,
 				5A35C77D1C40E9B200B67241 /* HomeTrainTableViewCell.h */,
 				5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */,
+				5A35C7801C40F1BD00B67241 /* HomeProductCollectionViewCell.h */,
+				5A35C7811C40F1BD00B67241 /* HomeProductCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				5A35C7581C4006C000B67241 /* SDWebImageManager+MJ.m in Sources */,
 				5A35C76A1C400E5600B67241 /* HomeBannerModel.m in Sources */,
 				5A35C75A1C4006C000B67241 /* SDWebImagePrefetcher.m in Sources */,
+				5A35C7821C40F1BD00B67241 /* HomeProductCollectionViewCell.m in Sources */,
 				5A35C7601C4006C000B67241 /* UIImageView+WebCache.m in Sources */,
 				5A35C7061C40010D00B67241 /* DealRootViewController.m in Sources */,
 				5A35C7491C4006C000B67241 /* AFURLRequestSerialization.m in Sources */,

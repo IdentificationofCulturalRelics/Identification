@@ -14,8 +14,8 @@
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, assign) NSInteger _id;
 @property (nonatomic, strong) NSString *image_url;
-@property (nonatomic, assign) double price;
-@property (nonatomic, assign) NSInteger salenum;
+@property (nonatomic, assign) CGFloat price;
+@property (nonatomic, assign) CGFloat salenum;
 @property (nonatomic, strong) NSString *summary;
 @property (nonatomic, strong) NSString *taobao_url;
 @property (nonatomic, strong) NSString *title;

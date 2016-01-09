@@ -13,6 +13,7 @@
 #import "HomeProductModel.h"
 #import "HomeCategoryView.h"
 #import "HomeTrainTableViewCell.h"
+#import "HomeProductCollectionViewCell.h"
 
 @interface HomeRootViewController ()<UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource>
 
@@ -67,13 +68,30 @@ static int page = 0;
     self.category_list = [NSMutableArray array];
     self.train_list = [NSMutableArray array];
     self.product_list = [NSMutableArray array];
-    self.backgroundScollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth,KScreenHeight)];
-    self.backgroundScollView.contentSize = CGSizeMake(0, 2*KScreenHeight);
-    self.backgroundScollView.delegate = self;
-    //    self.backgroundScollView.showsHorizontalScrollIndicator = NO;
-    self.backgroundScollView.backgroundColor = [UIColor grayColor];
+//    self.backgroundScollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth,KScreenHeight)];
+//    self.backgroundScollView.contentSize = CGSizeMake(0, 2*KScreenHeight);
+//    self.backgroundScollView.delegate = self;
+//    //    self.backgroundScollView.showsHorizontalScrollIndicator = NO;
+//    self.backgroundScollView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.backgroundScollView];
-
+    
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    //            if (KScreenHeight<667) {
+    //                layout.itemSize = CGSizeMake((KScreenWidth-40)/2+2, 494*KScaleHeight);
+    //                layout.sectionInset = UIEdgeInsetsMake(20*KScaleHeight, 20*KScaleWidth, 20*KScaleHeight, 20*KScaleWidth);
+    //            }else{
+    layout.itemSize = CGSizeMake(168*KScaleWidth, 210*KScaleHeight);
+    layout.sectionInset = UIEdgeInsetsMake(8*KScaleHeight, 15*KScaleWidth, 8*KScaleHeight, 10*KScaleWidth);
+    //            layout.minimumInteritemSpacing = 7*KScaleWidth;
+    //            }
+    
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) collectionViewLayout:layout];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.backgroundColor = [UIColor grayColor];
+    [self.collectionView registerClass:[HomeProductCollectionViewCell class] forCellWithReuseIdentifier:cellIdentifier2];
+    
+    [self.view addSubview:_collectionView];
     //网络风火轮开启
 //    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 //    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
@@ -160,7 +178,7 @@ static int page = 0;
             self.scrollView.pagingEnabled = YES;
             self.scrollView.backgroundColor = [UIColor greenColor];
             //    self.scrollView.showsHorizontalScrollIndicator = NO;
-            [self.backgroundScollView addSubview:self.scrollView];
+            [self.collectionView addSubview:self.scrollView];
             for (int i = 0 ; i < self.banner_list.count; i ++) {
                 UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth * i, 0, self.scrollView.width, self.scrollView.height)];
                 imageView.tag = i;
@@ -173,7 +191,7 @@ static int page = 0;
             self.pageControl.backgroundColor = [UIColor clearColor];
             self.pageControl.numberOfPages = self.banner_list.count;
             self.pageControl.userInteractionEnabled = NO;
-            [self.backgroundScollView addSubview:_pageControl];
+            [self.collectionView addSubview:_pageControl];
             [self startTime];
             
             self.categoryView = [[HomeCategoryView alloc]initWithFrame:CGRectMake(0, self.scrollView.height+5, KScreenWidth, 237*KScaleHeight)];
@@ -190,12 +208,30 @@ static int page = 0;
                 }
 
             }
-            [self.backgroundScollView addSubview:_categoryView];
-            self.trainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.categoryView.y+self.categoryView.height +5, KScreenWidth, 272*KScaleHeight)];
+            [self.collectionView addSubview:_categoryView];
+            self.trainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.categoryView.y+self.categoryView.height + 16*KScaleHeight, KScreenWidth, 272*KScaleHeight)];
             self.trainTableView.dataSource = self;
             self.trainTableView.delegate = self;
-            [self.backgroundScollView addSubview:_trainTableView];
+            self.trainTableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+            [self.collectionView addSubview:_trainTableView];
             
+            [self.collectionView reloadData];
+            
+            UIView *redView = [[UIView alloc]initWithFrame:CGRectMake(16*KScaleWidth, -10, 4*KScaleWidth, 12*KScaleHeight)];
+            redView.backgroundColor = [UIColor redColor];
+            [self.trainTableView addSubview:redView];
+            UILabel *categoryLabel = [[UILabel alloc]initWithFrame:CGRectMake(redView.x+redView.width+4*KScaleWidth, redView.y, 56*KScaleWidth, 14*KScaleHeight)];
+            categoryLabel.font = [UIFont systemFontOfSize:14*KScaleWidth];
+            categoryLabel.text = @"培训知识";
+            [self.trainTableView addSubview:categoryLabel];
+            
+            UIView *redView2 = [[UIView alloc]initWithFrame:CGRectMake(16*KScaleWidth, self.trainTableView.y+self.trainTableView.height + 10*KScaleHeight, 4*KScaleWidth, 12*KScaleHeight)];
+            redView2.backgroundColor = [UIColor redColor];
+            [self.collectionView addSubview:redView2];
+            UILabel *categoryLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(redView2.x+redView2.width+4*KScaleWidth, redView2.y, 56*KScaleWidth, 14*KScaleHeight)];
+            categoryLabel2.font = [UIFont systemFontOfSize:14*KScaleWidth];
+            categoryLabel2.text = @"精品仪器";
+            [self.collectionView addSubview:categoryLabel2];
         });
         
     }] resume];
@@ -216,6 +252,7 @@ static int page = 0;
     }
     HomeTrainModel *model = self.train_list[indexPath.row];
     cell.textLabel.text = model.title;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.image_url]];
     return cell;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -233,6 +270,47 @@ static int page = 0;
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self stopTime];
+}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    
+    return self.product_list.count+6;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    HomeProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier2 forIndexPath:indexPath];
+    if (indexPath.row<6) {
+//        cell.imageView = nil;
+//        cell.label.text = nil;
+        cell.hidden = YES;
+        return cell;
+    }else{
+        HomeProductModel *model = self.product_list[indexPath.row-6];
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.image_url] placeholderImage:nil];
+        cell.label.text = model.title;
+//        [cell.label sizeToFit];
+        cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",model.price];
+        cell.salenumLabel.text = [NSString stringWithFormat:@"¥%.2f",model.salenum];
+        cell.hidden = NO;
+        return cell;
+    }
+    
+   
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    HomeProductModel *model = self.product_list[indexPath.row-6];
+//    HomeDetailPageViewController *detailVc = [[HomeDetailPageViewController alloc]init];
+//    detailVc.url = model.requestURL;
+//    self.tabBarController.tabBar.hidden = YES;
+//    [self.navigationController pushViewController:detailVc animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
