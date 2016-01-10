@@ -12,6 +12,7 @@
 #import "TrainRootViewController.h"
 #import "IdentificationRootViewController.h"
 #import "DealRootViewController.h"
+#import "MeViewController.h"
 
 @interface IdentificationTabBarController ()<UITabBarControllerDelegate>
 
@@ -50,8 +51,15 @@
 //    my.title = @"我的";
 //    my.tabBarItem.image = [UIImage imageNamed:@"ic_mine"];
 //    my.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_mine_c"];
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    MeViewController *MeVC = [story instantiateViewControllerWithIdentifier:@"MeVC"];
+    IdentificationNavigationController *me = [[IdentificationNavigationController alloc]initWithRootViewController:MeVC];
+    me.title = @"我的";
+    me.navigationBarHidden = YES;
+    
 //    
-    self.viewControllers = @[home, identification, train, deal];
+    self.viewControllers = @[home, identification, train, deal,me];
     
     self.delegate = self;
 

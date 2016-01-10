@@ -20,13 +20,13 @@
         
 
         
-        self.label = [[UILabel alloc]initWithFrame:CGRectMake(8*KScaleWidth, self.imageView.y +self.imageView.height+10*KScaleHeight, 168*KScaleWidth, 42*KScaleHeight)];
+        self.label = [[UILabel alloc]initWithFrame:CGRectMake(8*KScaleWidth, self.imageView.y +self.imageView.height+10*KScaleHeight, 168*KScaleWidth-8*KScaleWidth, 42*KScaleHeight)];
         self.label.font = [UIFont systemFontOfSize:14*KScaleWidth];
         self.label.textColor = [UIColor blackColor];
         self.label.numberOfLines = 0;
         [self.contentView addSubview:_label];
         
-        self.priceLabel = [[UILabel alloc]initWithFrame:CGRectMake(8*KScaleWidth,self.label.y+42*KScaleHeight, 168*KScaleWidth/2, 32*KScaleHeight)];
+        self.priceLabel = [[UILabel alloc]initWithFrame:CGRectMake(8*KScaleWidth,self.label.y+42*KScaleHeight, 168*KScaleWidth/2+8*KScaleWidth, 32*KScaleHeight)];
         self.priceLabel.font = [UIFont systemFontOfSize:20*KScaleWidth];
         self.priceLabel.textColor = [UIColor redColor];
         [self.contentView addSubview:_priceLabel];
