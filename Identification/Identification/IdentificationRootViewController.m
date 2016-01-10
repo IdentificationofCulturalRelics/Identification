@@ -84,7 +84,7 @@ static NSString *cellIdentifier = @"cell";
     [categoryLabel sizeToFit];
     [self.view addSubview:categoryLabel];
     
-    self.trainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, categoryLabel.y+categoryLabel.height + 15*KScaleHeight, KScreenWidth, 432*KScaleHeight)];
+    self.trainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, categoryLabel.y+categoryLabel.height + 15*KScaleHeight, KScreenWidth, KScreenHeight - categoryLabel.y - categoryLabel.height-64)];
     self.trainTableView.dataSource = self;
     self.trainTableView.delegate = self;
     self.trainTableView.rowHeight = (272-10)*KScaleHeight/3;
