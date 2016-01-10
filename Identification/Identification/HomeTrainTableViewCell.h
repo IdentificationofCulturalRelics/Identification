@@ -10,4 +10,11 @@
 
 @interface HomeTrainTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UIImageView *myImageView;
+@property (nonatomic, strong) UIButton *play;
+@property (nonatomic, strong) UILabel *category_name;
+@property (nonatomic, strong) UILabel *price;
+@property (nonatomic, strong) UILabel *date;
+@property (nonatomic, strong) UILabel *timelimit;
+
 @end

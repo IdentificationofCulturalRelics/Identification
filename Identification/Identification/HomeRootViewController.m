@@ -14,10 +14,10 @@
 #import "HomeCategoryView.h"
 #import "HomeTrainTableViewCell.h"
 #import "HomeProductCollectionViewCell.h"
+#import "HomeTaobaoViewController.h"
 
 @interface HomeRootViewController ()<UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UIScrollView *backgroundScollView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -68,12 +68,6 @@ static int page = 0;
     self.category_list = [NSMutableArray array];
     self.train_list = [NSMutableArray array];
     self.product_list = [NSMutableArray array];
-//    self.backgroundScollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth,KScreenHeight)];
-//    self.backgroundScollView.contentSize = CGSizeMake(0, 2*KScreenHeight);
-//    self.backgroundScollView.delegate = self;
-//    //    self.backgroundScollView.showsHorizontalScrollIndicator = NO;
-//    self.backgroundScollView.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.backgroundScollView];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     //            if (KScreenHeight<667) {
@@ -182,7 +176,6 @@ static int page = 0;
             for (int i = 0 ; i < self.banner_list.count; i ++) {
                 UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth * i, 0, self.scrollView.width, self.scrollView.height)];
                 imageView.tag = i;
-//                imageView.contentMode = UIViewContentModeScaleAspectFit;
                 [imageView sd_setImageWithURL:[NSURL URLWithString:[self.banner_list[i] image_url]]];
                 [self.scrollView addSubview:imageView];
             }
@@ -212,7 +205,10 @@ static int page = 0;
             self.trainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.categoryView.y+self.categoryView.height + 16*KScaleHeight, KScreenWidth, 272*KScaleHeight)];
             self.trainTableView.dataSource = self;
             self.trainTableView.delegate = self;
+            self.trainTableView.rowHeight = (272-10)*KScaleHeight/3;
+            self.trainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
             self.trainTableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+            [self.trainTableView registerClass:[HomeTrainTableViewCell class] forCellReuseIdentifier:cellIdentifier];
             [self.collectionView addSubview:_trainTableView];
             
             [self.collectionView reloadData];
@@ -246,13 +242,15 @@ static int page = 0;
     return self.train_list.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-    }
+
+    HomeTrainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     HomeTrainModel *model = self.train_list[indexPath.row];
-    cell.textLabel.text = model.title;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.image_url]];
+    cell.category_name.text = model.category_name;
+    [cell.myImageView sd_setImageWithURL:[NSURL URLWithString:model.image_url]];
+    cell.price.text = [NSString stringWithFormat:@"¥%.2f",model.price];
+    [cell.price sizeToFit];
+    cell.timelimit.frame = CGRectMake(cell.price.x+cell.price.width + 8*KScaleWidth, cell.price.y +4*KScaleHeight, 25*KScaleWidth, 16*KScaleHeight);
+//    cell.date.text = model.??
     return cell;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -287,15 +285,12 @@ static int page = 0;
     
     HomeProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier2 forIndexPath:indexPath];
     if (indexPath.row<6) {
-//        cell.imageView = nil;
-//        cell.label.text = nil;
         cell.hidden = YES;
         return cell;
     }else{
         HomeProductModel *model = self.product_list[indexPath.row-6];
         [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.image_url] placeholderImage:nil];
         cell.label.text = model.title;
-//        [cell.label sizeToFit];
         cell.priceLabel.text = [NSString stringWithFormat:@"¥%.2f",model.price];
         NSString *oldPrice = [NSString stringWithFormat:@"¥%.2f",model.salenum];
         NSUInteger length = [oldPrice length];
@@ -313,10 +308,10 @@ static int page = 0;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HomeProductModel *model = self.product_list[indexPath.row-6];
-//    HomeDetailPageViewController *detailVc = [[HomeDetailPageViewController alloc]init];
-//    detailVc.url = model.requestURL;
-//    self.tabBarController.tabBar.hidden = YES;
-//    [self.navigationController pushViewController:detailVc animated:NO];
+    HomeTaobaoViewController *taobaoVc = [[HomeTaobaoViewController alloc]init];
+    taobaoVc.url = model.taobao_url;
+    self.tabBarController.tabBar.hidden = YES;
+    [self.navigationController pushViewController:taobaoVc animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

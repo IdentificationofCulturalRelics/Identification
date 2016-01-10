@@ -46,17 +46,16 @@
     dealVc.title = @"交易";
     dealVc.tabBarItem.image = [UIImage imageNamed:@"ic_theme"];
     dealVc.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_theme_c"];
-
     
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     MeViewController *MeVC = [story instantiateViewControllerWithIdentifier:@"MeVC"];
     IdentificationNavigationController *me = [[IdentificationNavigationController alloc]initWithRootViewController:MeVC];
     me.title = @"我的";
     me.navigationBarHidden = YES;
-    
-//    
+    me.tabBarItem.image = [UIImage imageNamed:@"ic_mine"];
+    me.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_mine_c"];
+
     self.viewControllers = @[home, identification, train, deal,me];
-    
     self.delegate = self;
 
 }

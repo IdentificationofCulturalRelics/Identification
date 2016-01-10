@@ -54,6 +54,7 @@
 		5A35C7791C40D1FB00B67241 /* DIYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C7781C40D1FB00B67241 /* DIYButton.m */; };
 		5A35C77C1C40D23700B67241 /* HomeCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77B1C40D23700B67241 /* HomeCategoryView.m */; };
 		5A35C77F1C40E9B200B67241 /* HomeTrainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */; };
+		5A94BB2B1C4294A400A1B217 /* HomeTaobaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94BB2A1C4294A400A1B217 /* HomeTaobaoViewController.m */; };
 		5AC5DDD11C420667003C1BDB /* HomeProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5DDD01C420667003C1BDB /* HomeProductCollectionViewCell.m */; };
 		77030BCD1C41085100BE8C17 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77030BCC1C41085100BE8C17 /* MeViewController.m */; };
 		77030BD21C41087300BE8C17 /* authority authority AuthorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77030BCF1C41087300BE8C17 /* authority authority AuthorityViewController.m */; };
@@ -179,6 +180,8 @@
 		5A35C77B1C40D23700B67241 /* HomeCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCategoryView.m; sourceTree = "<group>"; };
 		5A35C77D1C40E9B200B67241 /* HomeTrainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTrainTableViewCell.h; sourceTree = "<group>"; };
 		5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTrainTableViewCell.m; sourceTree = "<group>"; };
+		5A94BB291C4294A400A1B217 /* HomeTaobaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTaobaoViewController.h; sourceTree = "<group>"; };
+		5A94BB2A1C4294A400A1B217 /* HomeTaobaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTaobaoViewController.m; sourceTree = "<group>"; };
 		5AC5DDCF1C420667003C1BDB /* HomeProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductCollectionViewCell.h; sourceTree = "<group>"; };
 		5AC5DDD01C420667003C1BDB /* HomeProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductCollectionViewCell.m; sourceTree = "<group>"; };
 		77030BCB1C41085100BE8C17 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -430,6 +433,8 @@
 			children = (
 				5A35C6F91C3FF54B00B67241 /* HomeRootViewController.h */,
 				5A35C6FA1C3FF54B00B67241 /* HomeRootViewController.m */,
+				5A94BB291C4294A400A1B217 /* HomeTaobaoViewController.h */,
+				5A94BB2A1C4294A400A1B217 /* HomeTaobaoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -659,6 +664,7 @@
 				5A35C76A1C400E5600B67241 /* HomeBannerModel.m in Sources */,
 				5A35C75A1C4006C000B67241 /* SDWebImagePrefetcher.m in Sources */,
 				5A35C7601C4006C000B67241 /* UIImageView+WebCache.m in Sources */,
+				5A94BB2B1C4294A400A1B217 /* HomeTaobaoViewController.m in Sources */,
 				5A35C7061C40010D00B67241 /* DealRootViewController.m in Sources */,
 				5A35C7491C4006C000B67241 /* AFURLRequestSerialization.m in Sources */,
 				5A35C70B1C4006A400B67241 /* NSString+Height.m in Sources */,
