@@ -10,5 +10,7 @@
 
 @interface SettingViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *SettingTableView;
+- (IBAction)settingBackClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *settingBackOutlet;
 
 @end

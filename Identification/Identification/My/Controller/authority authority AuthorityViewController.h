@@ -15,5 +15,11 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *authorityTableView;
 
+@property (weak, nonatomic) IBOutlet UIButton *authorityBackOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *loginName;
+@property (weak, nonatomic) IBOutlet UILabel *authorityNow;
+@property (weak, nonatomic) IBOutlet UILabel *authorityLevel;
+@property (weak, nonatomic) IBOutlet UILabel *deadTime;
+- (IBAction)authorityBackClick:(id)sender;
 
 @end

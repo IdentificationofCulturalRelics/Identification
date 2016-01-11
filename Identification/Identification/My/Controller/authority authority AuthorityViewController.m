@@ -20,6 +20,10 @@
     // Do any additional setup after loading the view.
     _authorityTableView.delegate = self;
     _authorityTableView.dataSource = self;
+    _deadTime.font = detailTextFont;
+    _authorityLevel.font = detailTextFont;
+    _loginName.font = textFont;
+    _authorityNow.font = detailTextFont;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -146,6 +150,8 @@
 }
 
 
+
+
 #pragma mark - 代理方法
 #pragma mark 设置分组标题内容高度
 
@@ -174,4 +180,7 @@
 
 
 
+- (IBAction)authorityBackClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

@@ -63,6 +63,8 @@
 		77030BDA1C4154B000BE8C17 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77030BD91C4154B000BE8C17 /* ViewPagerController.m */; };
 		77030BDD1C4154FA00BE8C17 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77030BDC1C4154FA00BE8C17 /* ListViewController.m */; };
 		77030BE01C41551400BE8C17 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77030BDF1C41551400BE8C17 /* ContentViewController.m */; };
+		77E7F6C01C42A64200679FE3 /* arrow_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E7F6BF1C42A64200679FE3 /* arrow_back.png */; };
+		77E7F6C21C42ABCF00679FE3 /* head_login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E7F6C11C42ABCF00679FE3 /* head_login.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +199,8 @@
 		77030BDC1C4154FA00BE8C17 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		77030BDE1C41551400BE8C17 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		77030BDF1C41551400BE8C17 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		77E7F6BF1C42A64200679FE3 /* arrow_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_back.png; sourceTree = "<group>"; };
+		77E7F6C11C42ABCF00679FE3 /* head_login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head_login.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +265,8 @@
 				5A35C7001C4000D300B67241 /* Deal */,
 				5A35C6C61C3FE92900B67241 /* Main.storyboard */,
 				5A35C6C91C3FE92900B67241 /* Assets.xcassets */,
+				77E7F6C11C42ABCF00679FE3 /* head_login.jpg */,
+				77E7F6BF1C42A64200679FE3 /* arrow_back.png */,
 				77030BD41C410EB400BE8C17 /* icon_head.png */,
 				5A35C6CB1C3FE92900B67241 /* LaunchScreen.storyboard */,
 				5A35C6CE1C3FE92900B67241 /* Info.plist */,
@@ -615,6 +621,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E7F6C01C42A64200679FE3 /* arrow_back.png in Resources */,
+				77E7F6C21C42ABCF00679FE3 /* head_login.jpg in Resources */,
 				5A35C6CD1C3FE92900B67241 /* LaunchScreen.storyboard in Resources */,
 				5A35C6CA1C3FE92900B67241 /* Assets.xcassets in Resources */,
 				77030BD51C410EB400BE8C17 /* icon_head.png in Resources */,

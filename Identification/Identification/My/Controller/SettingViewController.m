@@ -46,15 +46,23 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
                              SettingTableIdentifier];
-    
     if (cell == nil) {
+        if (indexPath.row == 0) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                          reuseIdentifier: SettingTableIdentifier];
+        }
+        else
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier: SettingTableIdentifier];
         
         switch (indexPath.row) {
             case 0:
-                 [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+                 [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
                 cell.textLabel.text = @"清除缓存";
+                //SDWebImage框架自身计算缓存的实现
+                float folderSize = 0;
+                folderSize += [[SDImageCache sharedImageCache] getSize]/1024.0/1024.0;
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%fK",folderSize];
                 break;
             case 1:
                 [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
@@ -69,7 +77,7 @@
                 cell.textLabel.text = @"1111";
                 break;
         }
-
+        cell.textLabel.font = textFont;
         //设定附加视图
 //        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         //        UITableViewCellAccessoryNone,                   // 没有标示
@@ -101,13 +109,33 @@
     return cell;
 }
 
-#pragma mark 设置每行高度（每行高度可以不一样）
+//#pragma mark 设置每行高度（每行高度可以不一样）
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return 72*KScaleHeight;
 }
 
+//section头部间距
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0;//section头部高度
+}
+//section底部间距
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return tableView.frame.size.height - 72*3*KScaleHeight;
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        [[SDImageCache sharedImageCache] cleanDisk];
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        if (cell == nil){
+            NSLog(@"nil;");
+        }
+        cell.detailTextLabel.text = @"0K";
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -118,4 +146,7 @@
 }
 */
 
+- (IBAction)settingBackClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

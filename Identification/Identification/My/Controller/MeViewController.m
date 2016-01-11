@@ -22,6 +22,7 @@
     _MeTableView.dataSource = self;
     groupCell1 = [NSArray arrayWithObjects:@"我的权限",@"设备订单",@"我的交易",@"鉴定记录", nil];
     groupCell2 = [NSArray arrayWithObjects:@"设置",@"意见反馈", nil];
+    _loginLabel.font = textFont;
     if (haveLogin) {
         _loginLabel.hidden = YES;
     }
@@ -103,7 +104,8 @@
     
     //这是设置没选中之前的背景颜色
     cell.contentView.backgroundColor = [UIColor clearColor];
-    cell.imageView.image=[UIImage imageNamed:@"1001.jpg"];//未选cell时的图片
+    cell.imageView.image=[UIImage imageNamed:@"arrow_back.png"];//未选cell时的图片
+    cell.textLabel.font = textFont;
 //    cell.imageView.highlightedImage=[UIImage imageNamed:@"1002.jpg"];//选中cell后的图片
 //    cell.textLabel.text=[[self.myDic objectForKey:[[self.myDic allKeys]objectAtIndex:indexPath.section]]objectAtIndex:indexPath.row];
     switch (indexPath.section) {
@@ -120,7 +122,7 @@
 //section头部间距
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 8;//section头部高度
+    return 8*KScaleHeight;//section头部高度
 }
 //section底部间距
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
