@@ -15,6 +15,7 @@
 #import "HomeTrainTableViewCell.h"
 #import "HomeProductCollectionViewCell.h"
 #import "HomeTaobaoViewController.h"
+#import "HomeAllCategoryListViewController.h"
 
 @interface HomeRootViewController ()<UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource>
 
@@ -192,13 +193,17 @@ static int page = 0;
                 NSInteger buttonTag = button.tag;
 //                NSLog(@"%ld",buttonTag);
                 if (buttonTag>=10 && buttonTag<17) {
-                button.textLabel.text = [self.category_list[buttonTag-10] name];
-                [button.iconImageView sd_setImageWithURL:[NSURL URLWithString:[self.category_list[buttonTag-10] icon_url]]];
+                    button.textLabel.text = [self.category_list[buttonTag-10] name];
+                    [button.iconImageView sd_setImageWithURL:[NSURL URLWithString:[self.category_list[buttonTag-10] icon_url]]];
+                    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 if (buttonTag==17) {
                     button.textLabel.text = @"全部分类";
                     [button.iconImageView sd_setImageWithURL:[NSURL URLWithString:[self.category_list[buttonTag-10] icon_url]]];
+                    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
+                
+
 
             }
             [self.collectionView addSubview:_categoryView];
@@ -234,6 +239,14 @@ static int page = 0;
     
    
     
+}
+- (void)buttonAction:(DIYButton *)button{
+    if (button.tag == 17) {
+        HomeAllCategoryListViewController *allCategoryListVc = [[HomeAllCategoryListViewController alloc]init];
+        allCategoryListVc.category_list = _category_list;
+        self.tabBarController.tabBar.hidden = YES;
+        [self.navigationController pushViewController:allCategoryListVc animated:NO];
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

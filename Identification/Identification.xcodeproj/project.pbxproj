@@ -54,6 +54,10 @@
 		5A35C7791C40D1FB00B67241 /* DIYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C7781C40D1FB00B67241 /* DIYButton.m */; };
 		5A35C77C1C40D23700B67241 /* HomeCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77B1C40D23700B67241 /* HomeCategoryView.m */; };
 		5A35C77F1C40E9B200B67241 /* HomeTrainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */; };
+		5A3705F31C43E172009F2EDC /* IdentificationCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3705F21C43E172009F2EDC /* IdentificationCollectionReusableView.m */; };
+		5A3705F71C43F5BA009F2EDC /* IdentificationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3705F61C43F5BA009F2EDC /* IdentificationTextView.m */; };
+		5A7777481C43D0B7003A3FE7 /* HomeAllCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7777471C43D0B7003A3FE7 /* HomeAllCategoryListViewController.m */; };
+		5A77774B1C43D88C003A3FE7 /* IdentificationCompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A77774A1C43D88C003A3FE7 /* IdentificationCompareViewController.m */; };
 		5A94BB2B1C4294A400A1B217 /* HomeTaobaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94BB2A1C4294A400A1B217 /* HomeTaobaoViewController.m */; };
 		5AC5DDD11C420667003C1BDB /* HomeProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5DDD01C420667003C1BDB /* HomeProductCollectionViewCell.m */; };
 		77030BCD1C41085100BE8C17 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77030BCC1C41085100BE8C17 /* MeViewController.m */; };
@@ -182,6 +186,14 @@
 		5A35C77B1C40D23700B67241 /* HomeCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCategoryView.m; sourceTree = "<group>"; };
 		5A35C77D1C40E9B200B67241 /* HomeTrainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTrainTableViewCell.h; sourceTree = "<group>"; };
 		5A35C77E1C40E9B200B67241 /* HomeTrainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTrainTableViewCell.m; sourceTree = "<group>"; };
+		5A3705F11C43E172009F2EDC /* IdentificationCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentificationCollectionReusableView.h; sourceTree = "<group>"; };
+		5A3705F21C43E172009F2EDC /* IdentificationCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentificationCollectionReusableView.m; sourceTree = "<group>"; };
+		5A3705F51C43F5BA009F2EDC /* IdentificationTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentificationTextView.h; sourceTree = "<group>"; };
+		5A3705F61C43F5BA009F2EDC /* IdentificationTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentificationTextView.m; sourceTree = "<group>"; };
+		5A7777461C43D0B7003A3FE7 /* HomeAllCategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeAllCategoryListViewController.h; sourceTree = "<group>"; };
+		5A7777471C43D0B7003A3FE7 /* HomeAllCategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeAllCategoryListViewController.m; sourceTree = "<group>"; };
+		5A7777491C43D88C003A3FE7 /* IdentificationCompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentificationCompareViewController.h; sourceTree = "<group>"; };
+		5A77774A1C43D88C003A3FE7 /* IdentificationCompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentificationCompareViewController.m; sourceTree = "<group>"; };
 		5A94BB291C4294A400A1B217 /* HomeTaobaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTaobaoViewController.h; sourceTree = "<group>"; };
 		5A94BB2A1C4294A400A1B217 /* HomeTaobaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTaobaoViewController.m; sourceTree = "<group>"; };
 		5AC5DDCF1C420667003C1BDB /* HomeProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductCollectionViewCell.h; sourceTree = "<group>"; };
@@ -317,6 +329,9 @@
 				77030BD61C414D6200BE8C17 /* IdentificationHistory */,
 				5A35C6FC1C3FF63200B67241 /* IdentificationRootViewController.h */,
 				5A35C6FD1C3FF63200B67241 /* IdentificationRootViewController.m */,
+				5A7777491C43D88C003A3FE7 /* IdentificationCompareViewController.h */,
+				5A77774A1C43D88C003A3FE7 /* IdentificationCompareViewController.m */,
+				5A3705F41C43E686009F2EDC /* VIew */,
 			);
 			name = Identification;
 			sourceTree = "<group>";
@@ -441,6 +456,8 @@
 				5A35C6FA1C3FF54B00B67241 /* HomeRootViewController.m */,
 				5A94BB291C4294A400A1B217 /* HomeTaobaoViewController.h */,
 				5A94BB2A1C4294A400A1B217 /* HomeTaobaoViewController.m */,
+				5A7777461C43D0B7003A3FE7 /* HomeAllCategoryListViewController.h */,
+				5A7777471C43D0B7003A3FE7 /* HomeAllCategoryListViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -458,6 +475,17 @@
 				5AC5DDD01C420667003C1BDB /* HomeProductCollectionViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		5A3705F41C43E686009F2EDC /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				5A3705F11C43E172009F2EDC /* IdentificationCollectionReusableView.h */,
+				5A3705F21C43E172009F2EDC /* IdentificationCollectionReusableView.m */,
+				5A3705F51C43F5BA009F2EDC /* IdentificationTextView.h */,
+				5A3705F61C43F5BA009F2EDC /* IdentificationTextView.m */,
+			);
+			name = VIew;
 			sourceTree = "<group>";
 		};
 		77030BC71C41009A00BE8C17 /* My */ = {
@@ -652,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A35C7611C4006C000B67241 /* UIView+WebCacheOperation.m in Sources */,
+				5A7777481C43D0B7003A3FE7 /* HomeAllCategoryListViewController.m in Sources */,
 				5A35C77C1C40D23700B67241 /* HomeCategoryView.m in Sources */,
 				5A35C7561C4006C000B67241 /* SDWebImageDownloader.m in Sources */,
 				5A35C74B1C4006C000B67241 /* AFURLSessionManager.m in Sources */,
@@ -666,16 +695,19 @@
 				5A35C7591C4006C000B67241 /* SDWebImageManager.m in Sources */,
 				5A35C6C21C3FE92900B67241 /* AppDelegate.m in Sources */,
 				5A35C7481C4006C000B67241 /* AFSecurityPolicy.m in Sources */,
+				5A77774B1C43D88C003A3FE7 /* IdentificationCompareViewController.m in Sources */,
 				77030BD31C41087300BE8C17 /* SettingViewController.m in Sources */,
 				5A35C7581C4006C000B67241 /* SDWebImageManager+MJ.m in Sources */,
 				77030BDA1C4154B000BE8C17 /* ViewPagerController.m in Sources */,
 				5A35C76A1C400E5600B67241 /* HomeBannerModel.m in Sources */,
+				5A3705F71C43F5BA009F2EDC /* IdentificationTextView.m in Sources */,
 				5A35C75A1C4006C000B67241 /* SDWebImagePrefetcher.m in Sources */,
 				5A35C7601C4006C000B67241 /* UIImageView+WebCache.m in Sources */,
 				5A94BB2B1C4294A400A1B217 /* HomeTaobaoViewController.m in Sources */,
 				5A35C7061C40010D00B67241 /* DealRootViewController.m in Sources */,
 				5A35C7491C4006C000B67241 /* AFURLRequestSerialization.m in Sources */,
 				5A35C70B1C4006A400B67241 /* NSString+Height.m in Sources */,
+				5A3705F31C43E172009F2EDC /* IdentificationCollectionReusableView.m in Sources */,
 				5A35C7641C4006ED00B67241 /* Reachability.m in Sources */,
 				77030BD21C41087300BE8C17 /* authority authority AuthorityViewController.m in Sources */,
 				5A35C75C1C4006C000B67241 /* UIImage+GIF.m in Sources */,

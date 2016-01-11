@@ -10,6 +10,8 @@
 #import "DIYButton.h"
 #import "HomeTrainTableViewCell.h"
 #import "HomeTrainModel.h"
+#import "IdentificationCompareViewController.h"
+#import "HomeAllCategoryListViewController.h"
 
 static NSString *cellIdentifier = @"cell";
 
@@ -70,6 +72,7 @@ static NSString *cellIdentifier = @"cell";
         }else{
             self.diyButton.textLabel.text = @"鉴定记录";
         }
+        [self.diyButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         self.diyButton.iconImageView.backgroundColor = [UIColor redColor];
         [self.buttonView addSubview:_diyButton];
     }
@@ -96,6 +99,20 @@ static NSString *cellIdentifier = @"cell";
 }
 - (void)search{
     
+}
+- (void)buttonAction:(DIYButton *)button{
+    if (button.tag == 0) {
+        IdentificationCompareViewController *compareVc = [[IdentificationCompareViewController alloc]init];
+        self.tabBarController.tabBar.hidden = YES;
+        [self.navigationController pushViewController:compareVc animated:NO];
+    }else if(button.tag == 1){
+        HomeAllCategoryListViewController *allCategoryListVc = [[HomeAllCategoryListViewController alloc]init];
+        allCategoryListVc.isOnline = YES;
+        self.tabBarController.tabBar.hidden = YES;
+        [self.navigationController pushViewController:allCategoryListVc animated:NO];
+        
+    }
+
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
