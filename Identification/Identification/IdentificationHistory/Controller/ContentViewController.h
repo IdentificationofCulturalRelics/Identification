@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ContentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *HistoryTableView;
 
 @end

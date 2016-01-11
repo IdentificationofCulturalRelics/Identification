@@ -8,9 +8,9 @@
 
 #import "ViewPagerController.h"
 
-#define kDefaultTabHeight 44.0 // Default tab height
+#define kDefaultTabHeight 48*KScaleHeight // Default tab height
 #define kDefaultTabOffset 56.0 // Offset of the second and further tabs' from left
-#define kDefaultTabWidth 128.0
+#define kDefaultTabWidth KScreenWidth/2
 
 #define kDefaultTabLocation 1.0 // 1.0: Top, 0.0: Bottom
 
@@ -300,7 +300,7 @@
         
         _tabLocation = [self.delegate viewPager:self valueForOption:ViewPagerOptionTabLocation withDefault:kDefaultTabLocation];
         
-        _startFromSecondTab = [self.delegate viewPager:self valueForOption:ViewPagerOptionStartFromSecondTab withDefault:kDefaultStartFromSecondTab];
+        _startFromSecondTab = [self.delegate viewPager:self valueForOption:ViewPagerOptionCenterCurrentTab withDefault:kDefaultStartFromSecondTab];
         
         _centerCurrentTab = [self.delegate viewPager:self valueForOption:ViewPagerOptionCenterCurrentTab withDefault:kDefaultCenterCurrentTab];
     }

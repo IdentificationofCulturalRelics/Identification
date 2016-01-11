@@ -1,28 +1,30 @@
 //
-//  ContentViewController.m
+//  OnlineContentViewController.m
 //  Identification
 //
-//  Created by wl on 16/1/9.
+//  Created by wl on 16/1/11.
 //  Copyright © 2016年 com.IdentificationofCulturalRelics. All rights reserved.
 //
 
-#import "ContentViewController.h"
-#import "CompareIdentifyTableViewCell.h"
+#import "OnlineContentViewController.h"
+#import "OnlineIdentifyModel.h"
+#import "OnlineIdentifyTableViewCell.h"
 
-@interface ContentViewController ()<UITableViewDataSource,UITableViewDelegate>{
+@interface OnlineContentViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *_identifyHistoryCells;
     NSMutableArray *_compareIdentifyModels;
 }
 
+
 @end
 
-@implementation ContentViewController
+@implementation OnlineContentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _HistoryTableView.delegate = self;
-    _HistoryTableView.dataSource = self;
+    _OnlineTableView.delegate = self;
+    _OnlineTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,10 +36,10 @@
 -(void)initData{
     _identifyHistoryCells=[[NSMutableArray alloc]init];
     _compareIdentifyModels=[[NSMutableArray alloc]init];
-//    [_identifyHistoryCells addObject:nil];
+    //    [_identifyHistoryCells addObject:nil];
     
-    for (int i = 0; i<1; i++) {
-        CompareIdentifyTableViewCell *cell = [[CompareIdentifyTableViewCell alloc] init];
+    for (int i = 0; i<3; i++) {
+        OnlineIdentifyTableViewCell *cell = [[OnlineIdentifyTableViewCell alloc] init];
         [_identifyHistoryCells addObject:cell];
     }
 }
@@ -57,13 +59,13 @@
 #pragma mark返回每行的单元格
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier=@"UITableViewCellIdentifierKey1";
-    CompareIdentifyTableViewCell *cell;
+    OnlineIdentifyTableViewCell *cell;
     cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(!cell){
-        cell=[[CompareIdentifyTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell=[[OnlineIdentifyTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     //在此设置微博，以便重新布局
-    CompareIdentifyModel *status=_compareIdentifyModels[indexPath.row];
+    OnlineIdentifyModel *status=_compareIdentifyModels[indexPath.row];
     cell.status=status;
     return cell;
 }
@@ -72,8 +74,10 @@
 #pragma mark 重新设置单元格高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //KCStatusTableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
-    CompareIdentifyTableViewCell *cell= _identifyHistoryCells[indexPath.row];
-    cell.status=_compareIdentifyModels[indexPath.row];
+    OnlineIdentifyTableViewCell *cell= _identifyHistoryCells[indexPath.row];
+    cell.status=_identifyHistoryCells[indexPath.row];
+   // return cell.height;
+    
     return 138*KScaleHeight;
 }
 
@@ -85,6 +89,7 @@
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
+
 
 /*
 #pragma mark - Navigation

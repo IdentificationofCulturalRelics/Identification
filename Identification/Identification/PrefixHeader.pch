@@ -23,6 +23,10 @@
 //wl
 #define textFont [UIFont fontWithName:@"STHeitiSC-Light" size:18*KScaleWidth]
 #define detailTextFont [UIFont fontWithName:@"STHeitiSC-Light" size:14*KScaleWidth]
+#define HelveticaNeueTextFont [UIFont fontWithName:@"HelveticaNeue-Light" size:14*KScaleWidth]
+
+#define Font999999 [UIColor colorWithRed:99/255.0 green:99/255.0 blue:99/255.0 alpha:1]
+
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 #import "ContentViewController.h"
+#import "OnlineContentViewController.h"
 
 @interface ListViewController ()
 
@@ -77,11 +78,17 @@
 
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
     
+    if (index == 0) {
+        OnlineContentViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"OnlineContentViewController"];
+        return cvc;
+    }
+    else{
     ContentViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"contentViewController"];
     
    // cvc.labelString = [NSString stringWithFormat:@"Content View #%lu", (unsigned long)index];
     
     return cvc;
+    }
 }
 
 #pragma mark - ViewPagerDelegate
