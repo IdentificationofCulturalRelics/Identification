@@ -1145,7 +1145,7 @@
 		5A35C6E81C3FE92900B67241 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Migu Digital Media Co. Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Migu Digital Media Co. Ltd.";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Identification/PrefixHeader.pch";
@@ -1161,7 +1161,7 @@
 		5A35C6E91C3FE92900B67241 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Migu Digital Media Co. Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Migu Digital Media Co. Ltd.";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Identification/PrefixHeader.pch";
