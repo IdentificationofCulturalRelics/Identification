@@ -30,7 +30,7 @@
         self.bannerImageView.backgroundColor = [UIColor greenColor];
         [self.view addSubview:_bannerImageView];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://api.kalande.lingdianqi.com/index/index"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:HOME_URL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             NSMutableDictionary  *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"网络连接成功");
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

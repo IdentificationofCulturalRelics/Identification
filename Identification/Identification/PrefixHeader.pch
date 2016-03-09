@@ -14,7 +14,8 @@
 #import "AFHTTPSessionManager.h"
 #import "Reachability.h"
 
-#define Host @"api.kalande.lingdianqi.com"
+#define Host @"api.kalande.com.cn"
+#define HOME_URL @"http://api.kalande.com.cn/index"
 #define KScreenHeight [[UIScreen mainScreen] bounds].size.height
 #define KScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define KScaleHeight [[UIScreen mainScreen] bounds].size.height/667

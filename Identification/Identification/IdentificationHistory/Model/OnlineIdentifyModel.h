@@ -18,5 +18,5 @@
 @property(nonatomic,copy) NSString* imgRight;
 @property(nonatomic,copy) NSString* commentResult;//鉴定结果
 
-
++(OnlineIdentifyModel *)statusWithDictionary:(NSDictionary *)dic;
 @end

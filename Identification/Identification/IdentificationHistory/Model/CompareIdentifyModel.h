@@ -16,4 +16,6 @@
 @property(nonatomic,copy) NSString* imgMiddle;
 @property(nonatomic,copy) NSString* imgRight;
 
++(CompareIdentifyModel *)statusWithDictionary:(NSDictionary *)dic;
+
 @end

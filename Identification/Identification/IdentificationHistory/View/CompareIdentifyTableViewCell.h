@@ -23,4 +23,6 @@
 #pragma mark cell对象
 @property (nonatomic,strong) CompareIdentifyModel *status;
 
+-(void)setDeleteButton:(UIButton*)btn;
+
 @end

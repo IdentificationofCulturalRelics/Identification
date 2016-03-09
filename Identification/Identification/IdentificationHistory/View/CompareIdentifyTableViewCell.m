@@ -25,6 +25,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self initSubView];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
@@ -49,10 +50,6 @@
     _identifyDate.font = HelveticaNeueTextFont;
     [self.contentView addSubview:_identifyDate];
     
-    _removeCell = [[UIButton alloc] init];
-    _removeCell.backgroundColor = [UIColor grayColor];
-    [self.contentView addSubview:_removeCell];
-    
     _identifyAgain= [[UIButton alloc] init];
     //_identifyAgain.backgroundColor = [UIColor redColor];
     [_identifyAgain setTitleColor:Font999999 forState:UIControlStateNormal];
@@ -61,6 +58,12 @@
     _identifyAgain.layer.borderWidth = 1;
     _identifyAgain.layer.borderColor = [Font999999 CGColor];
     [self.contentView addSubview:_identifyAgain];
+}
+
+-(void)setDeleteButton:(UIButton*)btn{
+    _removeCell = btn;
+    _removeCell.backgroundColor = [UIColor grayColor];
+    [self.contentView addSubview:_removeCell];
 }
 
 -(void)setStatus:(CompareIdentifyModel*)Model{
@@ -93,7 +96,7 @@
     _identifyAgain.frame = rt;
     [_identifyAgain setTitle:@"重新鉴定" forState:UIControlStateNormal];
     
-    rt = CGRectMake(344*KScaleWidth, 106*KScaleHeight, 15*KScaleWidth, 15*KScaleHeight);
+    rt = CGRectMake(329*KScaleWidth, 106*KScaleHeight, 30*KScaleWidth, 24*KScaleHeight);
     _removeCell.frame = rt;
     [_removeCell setTitle:@"remove" forState:UIControlStateNormal];
 }

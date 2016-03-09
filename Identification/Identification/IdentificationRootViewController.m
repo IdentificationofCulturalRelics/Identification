@@ -13,6 +13,8 @@
 #import "IdentificationCompareViewController.h"
 #import "HomeAllCategoryListViewController.h"
 
+#import "ListViewController.h"
+
 static NSString *cellIdentifier = @"cell";
 
 @interface IdentificationRootViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -32,7 +34,7 @@ static NSString *cellIdentifier = @"cell";
     self.modelArray = [NSMutableArray array];
     self.view.backgroundColor = [UIColor grayColor];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://api.kalande.lingdianqi.com/index/index"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:HOME_URL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSMutableDictionary  *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 //        NSLog(@"网络连接成功");
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -111,6 +113,12 @@ static NSString *cellIdentifier = @"cell";
         self.tabBarController.tabBar.hidden = YES;
         [self.navigationController pushViewController:allCategoryListVc animated:NO];
         
+    }
+    else if(button.tag == 2){
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        //由storyboard根据myView的storyBoardID来获取我们要切换的视图
+        ListViewController *SettingView = [story instantiateViewControllerWithIdentifier:@"identityNV"];
+        [self presentViewController:SettingView animated:YES completion:nil];
     }
 
 }

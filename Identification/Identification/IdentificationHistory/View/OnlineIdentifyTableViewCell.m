@@ -28,6 +28,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self initSubView];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
@@ -46,6 +47,7 @@
     _goodsTitle.textColor = [UIColor grayColor];
     _goodsTitle.font = detailTextFont;
     [self.contentView addSubview:_goodsTitle];
+    _goodsTitle.numberOfLines = 0;
     
     _identifyDate = [[UILabel alloc] init];
     _identifyDate.textColor = [UIColor grayColor];
@@ -71,31 +73,32 @@
     CGSize textSize=[Model.referenceComments boundingRectWithSize:CGSizeMake(329.6*KScaleWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: detailTextFont} context:nil].size;
     rt = CGRectMake(16*KScaleWidth, 16*KScaleWidth, textSize.width, textSize.height);
     _goodsTitle.frame = rt;
+    _goodsTitle.text = Model.referenceComments;
     
     rt = CGRectMake(16*KScaleWidth, textSize.height+16*3*KScaleWidth/2, 108*KScaleWidth, 60*KScaleHeight);
     _imageLeft.frame = rt;
-    _imageLeft.backgroundColor = [UIColor yellowColor];
+    _imageLeft.backgroundColor = [UIColor redColor];
     _imageLeft.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:Model.imgLeft]]];
     
     rt = CGRectMake(132*KScaleWidth, textSize.height+16*3*KScaleWidth/2, 108*KScaleWidth, 60*KScaleHeight);
     _imageMiddle.frame = rt;
-    _imageMiddle.backgroundColor = [UIColor yellowColor];
+    _imageMiddle.backgroundColor = [UIColor redColor];
     _imageMiddle.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:Model.imgMiddle]]];
     
     rt = CGRectMake(252*KScaleWidth, textSize.height+16*3*KScaleWidth/2, 108*KScaleWidth, 60*KScaleHeight);
     _imgeRight.frame = rt;
-    _imgeRight.backgroundColor = [UIColor yellowColor];
+    _imgeRight.backgroundColor = [UIColor redColor];
     _imgeRight.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:Model.imgRight]]];
     
     rt = CGRectMake(16*KScaleWidth,_imageLeft.frame.size.height + _imageLeft.frame.origin.y+ 16*KScaleWidth, 70*KScaleWidth, 14*KScaleHeight);
     _goodsComment.frame = rt;
     
-    rt = CGRectMake(87*KScaleWidth,_imageLeft.frame.size.height + _imageLeft.frame.origin.y - 4*KScaleHeight, 36*KScaleWidth, 19*KScaleHeight);
+    rt = CGRectMake(87*KScaleWidth,_imageLeft.frame.size.height + _imageLeft.frame.origin.y + 12*KScaleHeight, 36*KScaleWidth, 19*KScaleHeight);
     _goodsResult.frame = rt;
     _goodsResult.text = @"真品";
     //_goodsResult.text = Model.commentResult;
     
-    rt = CGRectMake(289*KScaleWidth, _imageLeft.frame.size.height + _imageLeft.frame.origin.y, 70*KScaleWidth, 17*KScaleHeight);
+    rt = CGRectMake(289*KScaleWidth, _imageLeft.frame.size.height + _imageLeft.frame.origin.y+ 12*KScaleHeight, 70*KScaleWidth, 17*KScaleHeight);
     _identifyDate.frame = rt;
     //_identifyDate.backgroundColor = [UIColor redColor];
     _identifyDate.text = @"2015.12.14";

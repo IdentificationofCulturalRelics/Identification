@@ -137,7 +137,7 @@ static int page = 0;
 //    }];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://api.kalande.lingdianqi.com/index/index"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:HOME_URL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSMutableDictionary  *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSLog(@"网络连接成功");
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -159,7 +159,7 @@ static int page = 0;
             [model setValuesForKeysWithDictionary:Dic];
             [self.train_list addObject:model];
         }
-        for (NSMutableDictionary *Dic in [contentDic objectForKey:@"product_list"]) {
+        for (NSMutableDictionary *Dic in [contentDic objectForKey:@"good_list"]) {
             HomeProductModel *model = [[HomeProductModel alloc]init];
             [model setValuesForKeysWithDictionary:Dic];
             [self.product_list addObject:model];
@@ -168,22 +168,30 @@ static int page = 0;
        
         dispatch_async(dispatch_get_main_queue(), ^{
             self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth,109*KScaleHeight)];
-            self.scrollView.contentSize = CGSizeMake(KScreenWidth * self.banner_list.count, 0);
+            self.scrollView.contentSize = CGSizeMake(KScreenWidth * 3, 0);
             self.scrollView.delegate = self;
             self.scrollView.pagingEnabled = YES;
             self.scrollView.backgroundColor = [UIColor greenColor];
             //    self.scrollView.showsHorizontalScrollIndicator = NO;
             [self.collectionView addSubview:self.scrollView];
-            for (int i = 0 ; i < self.banner_list.count; i ++) {
+//            for (int i = 0 ; i < self.banner_list.count; i ++) {
+//                UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth * i, 0, self.scrollView.width, self.scrollView.height)];
+//                imageView.tag = i;
+//                [imageView sd_setImageWithURL:[NSURL URLWithString:[self.banner_list[i] image_url]]];
+//                imageView.backgroundColor = [UIColor colorWithRed:i*1.0/10 green:i*1.0/10 blue:i*1.0/10 alpha:1];
+//                [self.scrollView addSubview:imageView];
+//            }
+            
+            for (int i = 0 ; i < 3; i ++) {
                 UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth * i, 0, self.scrollView.width, self.scrollView.height)];
                 imageView.tag = i;
-                [imageView sd_setImageWithURL:[NSURL URLWithString:[self.banner_list[i] image_url]]];
+                imageView.backgroundColor = [UIColor colorWithRed:i*2.0/10 green:0.5 blue:0.5 alpha:1];
                 [self.scrollView addSubview:imageView];
             }
 
             self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.scrollView.y+self.scrollView.height -30, KScreenWidth, 30)];
             self.pageControl.backgroundColor = [UIColor clearColor];
-            self.pageControl.numberOfPages = self.banner_list.count;
+            self.pageControl.numberOfPages = 3;
             self.pageControl.userInteractionEnabled = NO;
             [self.collectionView addSubview:_pageControl];
             [self startTime];
@@ -192,14 +200,17 @@ static int page = 0;
             for (DIYButton *button in self.categoryView.subviews) {
                 NSInteger buttonTag = button.tag;
 //                NSLog(@"%ld",buttonTag);
+                if([self.category_list count] == 0)
+                    break;
                 if (buttonTag>=10 && buttonTag<17) {
                     button.textLabel.text = [self.category_list[buttonTag-10] name];
-                    [button.iconImageView sd_setImageWithURL:[NSURL URLWithString:[self.category_list[buttonTag-10] icon_url]]];
+                    NSURL *url = [NSURL URLWithString:[self.category_list[buttonTag-10] icon_url]];
+                    [button.iconImageView sd_setImageWithURL:url];
                     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 if (buttonTag==17) {
                     button.textLabel.text = @"全部分类";
-                    [button.iconImageView sd_setImageWithURL:[NSURL URLWithString:[self.category_list[buttonTag-10] icon_url]]];
+                    [button.iconImageView setImage:[UIImage imageNamed:@"category_all@3x.png"]];
                     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 

@@ -26,34 +26,34 @@
     HomeRootViewController *homeVc =[[HomeRootViewController alloc]init];
     IdentificationNavigationController *home = [[IdentificationNavigationController alloc]initWithRootViewController:homeVc];
     home.title = @"首页";
-    homeVc.tabBarItem.image = [UIImage imageNamed:@"ic_mainpage"];
-    homeVc.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_mainpage_c"];
+    homeVc.tabBarItem.image = [UIImage imageNamed:@"tabbar_home@3x.png"];
+    homeVc.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_home_pressed@3x.png"];
     
     IdentificationRootViewController *identificationVC = [[IdentificationRootViewController alloc]init];
     IdentificationNavigationController *identification = [[IdentificationNavigationController alloc]initWithRootViewController:identificationVC];
     identificationVC.title = @"鉴定";
-    identificationVC.tabBarItem.image = [UIImage imageNamed:@"ic_new"];
-    identificationVC.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_new_c"];
+    identificationVC.tabBarItem.image = [UIImage imageNamed:@"tabbar_evaluate@3x.png"];
+    identificationVC.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_evaluate_pressed@3x.png"];
 
     TrainRootViewController *trainVc = [[TrainRootViewController alloc]init];
     IdentificationNavigationController *train = [[IdentificationNavigationController alloc]initWithRootViewController:trainVc];
     trainVc.title = @"培训";
-    trainVc.tabBarItem.image = [UIImage imageNamed:@"ic_hot"];
-    trainVc.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_hot_c"];
+    trainVc.tabBarItem.image = [UIImage imageNamed:@"tabbar_train@3x.png"];
+    trainVc.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_train_pressed@3x.png"];
 
     DealRootViewController *dealVc = [[DealRootViewController alloc]init];
     IdentificationNavigationController *deal = [[IdentificationNavigationController alloc]initWithRootViewController:dealVc];
     dealVc.title = @"交易";
-    dealVc.tabBarItem.image = [UIImage imageNamed:@"ic_theme"];
-    dealVc.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_theme_c"];
+    dealVc.tabBarItem.image = [UIImage imageNamed:@"tabbar_deal@3x.png"];
+    dealVc.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_deal_pressed@3x.png"];
     
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     MeViewController *MeVC = [story instantiateViewControllerWithIdentifier:@"MeVC"];
     IdentificationNavigationController *me = [[IdentificationNavigationController alloc]initWithRootViewController:MeVC];
     me.title = @"我的";
     me.navigationBarHidden = YES;
-    me.tabBarItem.image = [UIImage imageNamed:@"ic_mine"];
-    me.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_mine_c"];
+    me.tabBarItem.image = [UIImage imageNamed:@"tabbar_my@3x.png"];
+    me.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_my_pressed@3x.png"];
 
     self.viewControllers = @[home, identification, train, deal,me];
     self.delegate = self;
