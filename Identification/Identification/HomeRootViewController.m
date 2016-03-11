@@ -140,6 +140,7 @@ static int page = 0;
     [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://api.kalande.lingdianqi.com/index/index"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSMutableDictionary  *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSLog(@"网络连接成功");
+        NSLog(@"%@", dic);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
         NSMutableDictionary *contentDic = [dic objectForKey:@"content"];
@@ -192,6 +193,9 @@ static int page = 0;
             for (DIYButton *button in self.categoryView.subviews) {
                 NSInteger buttonTag = button.tag;
 //                NSLog(@"%ld",buttonTag);
+                if (self.category_list.count==0) {
+                    break;
+                }
                 if (buttonTag>=10 && buttonTag<17) {
                     button.textLabel.text = [self.category_list[buttonTag-10] name];
                     [button.iconImageView sd_setImageWithURL:[NSURL URLWithString:[self.category_list[buttonTag-10] icon_url]]];
