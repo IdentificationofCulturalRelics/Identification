@@ -160,7 +160,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QiE-rM-SzK">
                                                 <rect key="frame" x="16" y="18" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="   " backgroundImage="arrow_back.png"/>
+                                                <state key="normal" title="   " backgroundImage="Back Arrow@3x.png"/>
                                                 <connections>
                                                     <action selector="authorityBackClick:" destination="ENE-M5-K4o" eventType="touchUpInside" id="6hs-nk-HMm"/>
                                                 </connections>
@@ -420,7 +420,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5s2-8e-Glo">
                                 <rect key="frame" x="16" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" " backgroundImage="arrow_back.png"/>
+                                <state key="normal" title=" " backgroundImage="Back Arrow@3x.png"/>
                                 <connections>
                                     <action selector="identityHistoryReturn:" destination="yvl-It-Upl" eventType="touchUpInside" id="11v-ye-aQI"/>
                                 </connections>
@@ -527,7 +527,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GCL-EM-1FX">
                                                 <rect key="frame" x="16" y="22" width="22" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="   " backgroundImage="arrow_back.png"/>
+                                                <state key="normal" title="   " backgroundImage="Back Arrow@3x.png"/>
                                                 <connections>
                                                     <action selector="settingBackClick:" destination="RkI-vg-KLT" eventType="touchUpInside" id="bPH-RP-CKU"/>
                                                 </connections>
@@ -564,7 +564,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_back.png" width="16" height="16"/>
+        <image name="Back Arrow@3x.png" width="72" height="72"/>
         <image name="head_login.jpg" width="300" height="300"/>
         <image name="icon_head.png" width="72" height="72"/>
     </resources>

@@ -12,6 +12,7 @@
 {
     NSArray *groupCell1;
     NSArray *groupCell2;
+    NSArray *groupImage;
     BOOL haveLogin;
 }
 @property (weak, nonatomic) IBOutlet UITableView *MeTableView;

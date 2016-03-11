@@ -22,6 +22,7 @@
     _MeTableView.dataSource = self;
     groupCell1 = [NSArray arrayWithObjects:@"我的权限",@"设备订单",@"我的交易",@"鉴定记录", nil];
     groupCell2 = [NSArray arrayWithObjects:@"设置",@"意见反馈", nil];
+    groupImage = [NSArray arrayWithObjects:@"common_jurisdiction@3x.png",@"common_order copy@3x.png",@"common_order@3x.png",@"common_myappraisal@3x.png",@"common_set@3x.png",@"common_feedback@3x.png", nil];
     _loginLabel.font = textFont;
     if (haveLogin) {
         _loginLabel.hidden = YES;
@@ -104,17 +105,18 @@
     
     //这是设置没选中之前的背景颜色
     cell.contentView.backgroundColor = [UIColor clearColor];
-    cell.imageView.image=[UIImage imageNamed:@"arrow_back.png"];//未选cell时的图片
     cell.textLabel.font = textFont;
-//    cell.imageView.highlightedImage=[UIImage imageNamed:@"1002.jpg"];//选中cell后的图片
+//   cell.imageView.highlightedImage=[UIImage imageNamed:@"Back Arrow Copy@3x.png"];//选中cell后的图片
 //    cell.textLabel.text=[[self.myDic objectForKey:[[self.myDic allKeys]objectAtIndex:indexPath.section]]objectAtIndex:indexPath.row];
     switch (indexPath.section) {
         case 0:
             cell.textLabel.text = [groupCell1 objectAtIndex:indexPath.row];
+            cell.imageView.image=[UIImage imageNamed:[groupImage objectAtIndex:indexPath.row]];//未选cell时的图片
             break;
             
         default:
             cell.textLabel.text = [groupCell2 objectAtIndex:indexPath.row];
+            cell.imageView.image=[UIImage imageNamed:[groupImage objectAtIndex:indexPath.row+4]];//未选cell时的图片
             break;
     }
     return cell;
