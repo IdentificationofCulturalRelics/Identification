@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jG6-uL-Hbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1805" y="756"/>
+            <point key="canvasLocation" x="-1947" y="534"/>
         </scene>
         <!--Authority authority Authority View Controller-->
         <scene sceneID="JyP-cw-3es">
@@ -158,7 +158,7 @@
                                     <navigationItem title="我的权限" id="RqN-IL-hEe">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="sNZ-mf-w9i">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QiE-rM-SzK">
-                                                <rect key="frame" x="16" y="18" width="30" height="30"/>
+                                                <rect key="frame" x="16" y="23" width="11" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="   " backgroundImage="Back Arrow@3x.png"/>
                                                 <connections>
@@ -400,7 +400,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lf-Px-PcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1505" y="1423"/>
+            <point key="canvasLocation" x="-1587" y="1406"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="Yoq-0f-eQG">
@@ -418,7 +418,7 @@
                     <navigationItem key="navigationItem" id="Y9H-MF-hEX">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Pal-yh-VVo">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5s2-8e-Glo">
-                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <rect key="frame" x="16" y="12" width="11" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title=" " backgroundImage="Back Arrow@3x.png"/>
                                 <connections>
@@ -433,7 +433,104 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icT-Mj-vxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1035" y="1423"/>
+            <point key="canvasLocation" x="-1135" y="1401"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uec-kJ-nGr">
+            <objects>
+                <navigationController storyboardIdentifier="MyDealNV" id="yW5-BT-jG0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1AE-wn-FBr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="87j-ou-ecT" kind="relationship" relationship="rootViewController" id="J2X-ka-Ukg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afo-9b-axh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1672" y="2082"/>
+        </scene>
+        <!--Deal List View Controller-->
+        <scene sceneID="70O-CB-Inw">
+            <objects>
+                <viewController id="87j-ou-ecT" customClass="DealListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qXH-9F-IJl"/>
+                        <viewControllerLayoutGuide type="bottom" id="C4y-HY-5ln"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cKn-QJ-jLI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xlJ-DH-DeY">
+                        <barButtonItem key="leftBarButtonItem" image="Back Arrow.png" id="V7i-GC-uxV">
+                            <color key="tintColor" red="0.96147717929999998" green="0.95150596220000005" blue="0.9614257812" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="identityHistoryReturn:" destination="87j-ou-ecT" id="Aze-rd-xQ6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tui-jg-a7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1216" y="2082"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v5I-S4-dHq">
+            <objects>
+                <navigationController storyboardIdentifier="DEVICEORDER" id="xjC-Of-Fo3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ulo-RH-QEV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ByU-AM-C8H" kind="relationship" relationship="rootViewController" id="QAi-xz-vL3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOg-vz-L8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-811" y="2120"/>
+        </scene>
+        <!--设备订单-->
+        <scene sceneID="Awg-p3-P4k">
+            <objects>
+                <tableViewController id="ByU-AM-C8H" customClass="DeviceOrderTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rnY-V8-ctt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sB1-KY-HzV">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sB1-KY-HzV" id="8H4-BJ-Ckx">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ByU-AM-C8H" id="M38-9J-Myd"/>
+                            <outlet property="delegate" destination="ByU-AM-C8H" id="ybi-eF-da8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设备订单" id="uMv-rO-AC7">
+                        <barButtonItem key="leftBarButtonItem" image="Back Arrow.png" id="hkD-pF-C5z">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="ByU-AM-C8H" id="hKU-o5-E3r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deviceOrderItem" destination="uMv-rO-AC7" id="zHo-Bb-WAn"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rXp-wq-ULj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-373" y="2109"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="rnf-7G-4IH">
@@ -467,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZ7-Zi-2Mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-659.5" y="1287.5"/>
+            <point key="canvasLocation" x="-723.5" y="1450.5"/>
         </scene>
         <!--Online Content View Controller-->
         <scene sceneID="D7S-wh-cy6">
@@ -525,7 +622,7 @@
                                     <navigationItem title="设置" id="ARK-rZ-lXB">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="VqC-w6-kMq">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GCL-EM-1FX">
-                                                <rect key="frame" x="16" y="22" width="22" height="22"/>
+                                                <rect key="frame" x="16" y="23" width="11" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="   " backgroundImage="Back Arrow@3x.png"/>
                                                 <connections>
@@ -560,10 +657,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpx-7v-Fjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1853" y="1504"/>
+            <point key="canvasLocation" x="-1952" y="1406"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Back Arrow.png" width="13" height="22"/>
         <image name="Back Arrow@3x.png" width="72" height="72"/>
         <image name="head_login.jpg" width="300" height="300"/>
         <image name="icon_head.png" width="72" height="72"/>

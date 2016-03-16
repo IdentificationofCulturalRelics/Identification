@@ -140,10 +140,22 @@
             SettingViewController *SettingView = [story instantiateViewControllerWithIdentifier:@"authorityVC"];
             [self presentViewController:SettingView animated:YES completion:nil];
         }
+        if (indexPath.row == 2) {
+            UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            //由storyboard根据myView的storyBoardID来获取我们要切换的视图
+            SettingViewController *SettingView = [story instantiateViewControllerWithIdentifier:@"MyDealNV"];
+            [self presentViewController:SettingView animated:YES completion:nil];
+        }
         if (indexPath.row == 3) {
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             //由storyboard根据myView的storyBoardID来获取我们要切换的视图
             SettingViewController *SettingView = [story instantiateViewControllerWithIdentifier:@"identityNV"];
+            [self presentViewController:SettingView animated:YES completion:nil];
+        }
+        if (indexPath.row == 1) {
+            UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            //由storyboard根据myView的storyBoardID来获取我们要切换的视图
+            SettingViewController *SettingView = [story instantiateViewControllerWithIdentifier:@"DEVICEORDER"];
             [self presentViewController:SettingView animated:YES completion:nil];
         }
     }

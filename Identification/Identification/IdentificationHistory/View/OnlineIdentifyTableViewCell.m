@@ -77,18 +77,18 @@
     
     rt = CGRectMake(16*KScaleWidth, textSize.height+16*3*KScaleWidth/2, 108*KScaleWidth, 60*KScaleHeight);
     _imageLeft.frame = rt;
-    _imageLeft.backgroundColor = [UIColor redColor];
     _imageLeft.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:Model.imgLeft]]];
+    _imageLeft.image = [UIImage imageNamed:@"category_bamboo@3x.png"];
     
     rt = CGRectMake(132*KScaleWidth, textSize.height+16*3*KScaleWidth/2, 108*KScaleWidth, 60*KScaleHeight);
     _imageMiddle.frame = rt;
-    _imageMiddle.backgroundColor = [UIColor redColor];
     _imageMiddle.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:Model.imgMiddle]]];
+    _imageMiddle.image = [UIImage imageNamed:@"category_gem@3x.png"];
     
     rt = CGRectMake(252*KScaleWidth, textSize.height+16*3*KScaleWidth/2, 108*KScaleWidth, 60*KScaleHeight);
     _imgeRight.frame = rt;
-    _imgeRight.backgroundColor = [UIColor redColor];
     _imgeRight.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:Model.imgRight]]];
+    _imgeRight.image = [UIImage imageNamed:@"category_lacquerware@3x.png"];
     
     rt = CGRectMake(16*KScaleWidth,_imageLeft.frame.size.height + _imageLeft.frame.origin.y+ 16*KScaleWidth, 70*KScaleWidth, 14*KScaleHeight);
     _goodsComment.frame = rt;
